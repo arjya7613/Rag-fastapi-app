@@ -12,13 +12,13 @@ import jq
 import time
  
 load_dotenv()
- 
+
 def create_rag_pipeline():
     try:
         # load embeddings
         hf_embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2",
-            model_kwargs = {"local_files_only": True}
+            # model_kwargs = {"local_files_only": True}
             )
         if os.path.exists("faiss_store"):
             print("Vector store already exists. Loading the existing store...")
